@@ -1,0 +1,454 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 0px;
+}
+
+.contenedor-grid{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+
+    grid-template-areas: 
+        "header"
+        "banner-titulo"
+        "contenedor-sobre-nosotros"
+        "main"
+        "footer";
+}
+
+/*home header*/
+header{
+    grid-area: header;
+    width: 100%;
+}
+
+/*titulo*/
+.banner-titulo{
+    grid-area: banner-titulo;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(4,9,30,0.555),rgba(4,9,30,0.555)),url(../img/planta.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.banner-argentina{
+    min-height: 100vh;
+    width: 100%;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(4,9,30,0.555),rgba(4,9,30,0.555)),url(../img/faro-fin-del-mundo.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.banner-titulo h1, .banner-argentina h1{
+    color: aliceblue;
+    font-size: 15vh;
+    text-align: center;
+    padding-top: 100px;
+}
+
+
+.banner-titulo p, .banner-argentina p{
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0 35px;
+    font-size: medium;   
+}
+
+.banner-titulo nav, .banner-argentina nav{
+    display: flex;
+    justify-content: center;
+}
+
+
+.boton-header{
+    display: inline-block;
+    text-decoration: none;
+    color: aliceblue;
+    border: 1px solid aliceblue;
+    padding: 12px 34px;
+    font-size: 13px;
+    background-color: rgb(0, 107, 247);
+    position:relative;
+    cursor: pointer;
+
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.boton-header:hover{
+    box-shadow: 2px 2px 3px whitesmoke;
+    transform: translateY(-10px);
+}
+
+/*explicacion sobre nosotros*/
+.contenedor-sobre-nosotros{
+    grid-area: contenedor-sobre-nosotros;
+    text-align: center;
+    padding: 5%;
+    padding-top: 10%;
+}
+
+.contenedor-sobre-nosotros h2{
+    font-size: 8vh;
+}
+
+.contenedor-sobre-nosotros p{
+    color: black;
+}
+
+/*main imagenes*/
+main{
+    grid-area: main;
+}
+
+
+.titulo-visita{
+    text-align: center;
+    font-size: 8vh;
+}
+
+.contenedor-lugares{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.nombre-lugar{   
+    width: 65vh;
+    height: 150px;
+    border: 4px solid rgb(162, 154, 171);
+    border-radius: 10px;
+    text-align: center;
+    line-height: 150px;
+
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.nombre-lugar nav a{
+    font-size: 35px;
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.nombre-lugar:hover{
+    transform: translateY(-10px);
+}
+
+.lugar1{
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(4,9,30,0.555),rgba(4,9,30,0.555)), url(../img/puente-de-la-mujer.jpg)
+}
+
+.lugar2{
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(4,9,30,0.555),rgba(4,9,30,0.555)), url(../img/coming-soon.jpg);
+}
+
+.lugar3{
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(4,9,30,0.555),rgba(4,9,30,0.555)), url(../img/coming-soon.jpg);
+}
+
+.lugar4{
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(4,9,30,0.555),rgba(4,9,30,0.555)), url(../img/coming-soon.jpg);
+}
+
+.lugar5{
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(4,9,30,0.555),rgba(4,9,30,0.555)), url(../img/coming-soon.jpg);
+}
+
+.lugar6{
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(4,9,30,0.555),rgba(4,9,30,0.555)), url(../img/coming-soon.jpg);
+}
+
+
+/*argentina cards*/
+
+.card{
+    margin: 20px;
+    width: 190px;
+    height: 300px;
+    border-radius: 10px;
+    background: var(--i);
+    background-size: cover;
+    box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .4);
+    opacity: 0;
+    transition: .5s;
+    border-radius: 10px;
+}
+
+.lugares-visitar{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.5 repeat(2, 1fr) 0.5 repeat(2, 1fr) 0.5 repeat(2, 1fr);
+    justify-items: center;
+
+    grid-template-areas:
+    "buenos-aires buenos-aires"
+    "card1 card2"
+    "card3 card4"
+    "tierra-del-fuego tierra-del-fuego"
+    "card5 card6"
+    "card7 card8"
+    "misiones misiones"
+    "card9 card10"
+    "card11 card12";
+
+    gap: 20px;
+}
+
+.buenos-aires{
+    grid-area: buenos-aires;
+    padding: 40px;
+}
+
+.nombre-provincia h2, h3{
+    text-align: center;
+}
+
+.card1{
+    grid-area: card1;
+}
+
+.card2{
+    grid-area: card2;
+}
+
+.card3{
+    grid-area: card3;
+}
+
+.card4{
+    grid-area: card4;
+}
+
+.tierra-del-fuego{
+    grid-area: tierra-del-fuego;
+    padding: 40px;
+}
+
+.card5{
+    grid-area: card5;
+}
+
+.card6{
+    grid-area: card6;
+}
+
+.card7{
+    grid-area: card7;
+}
+
+.card8{
+    grid-area: card8;
+}
+
+.misiones{
+    grid-area: misiones;
+    padding: 40px;
+}
+
+.card9{
+    grid-area: card9;
+}
+
+.card10{
+    grid-area: card10;
+}
+
+.card11{
+    grid-area: card11;
+}
+
+.card12{
+    grid-area: card12;
+}
+
+.content h4, p{
+    color: rgba(255, 255, 255, .8);
+    text-align: center;
+}
+
+.card:hover .content{
+    opacity: 1;
+}
+
+/*galeria*/
+
+.galeria{
+    margin: 50px;
+    text-align: center;
+}
+.galeria h2{
+    margin-top: 50px;
+}
+.fotos, .videos{
+    margin-top: 50px;
+}
+
+/*form main*/
+
+.contenedor-grid{
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.contact-title{
+    text-align: left;
+    font-size: 25px;
+}
+.form-titulos{
+    width: 100%;
+    margin-top: 20px;
+    font-size: 13px;
+}
+.form-titulos input, .form-titulos textarea{
+    width: 100%;
+}
+
+/*footer*/
+footer{
+    grid-area: footer;
+    min-height: 30vh;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-image: linear-gradient(rgba(4,9,30,0.555),rgba(4,9,30,0.555)),url(../img/planta.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+}
+
+.footer2{
+    text-align: center;
+    position: relative;
+    background-image: linear-gradient(rgba(4,9,30,0.555),rgba(4,9,30,0.555)),url(../img/planta.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+}
+
+.contenido-footer, .abajo-footer{
+    color: aliceblue;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+footer ul li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.boton-volver-arriba{
+    display: inline-block;
+    text-decoration: none;
+    color: aliceblue;
+    border: 1px solid aliceblue;
+    padding: 5px 15px;
+    font-size: 13px;
+    background-color: rgb(22, 37, 58);
+    position: relative;
+    cursor: pointer;
+
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.boton-volver-arriba:hover{
+    transform: translateY(-10px);
+}
+
+.boton-volver-arriba a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+/*laptop landscape*/
+
+@media screen and (min-width:1024px) {
+    .lugares-visitar{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr;
+        justify-items: center;
+    
+        grid-template-areas:
+        "buenos-aires buenos-aires buenos-aires buenos-aires"
+        "card1 card2 card3 card4"
+        "tierra-del-fuego tierra-del-fuego tierra-del-fuego tierra-del-fuego"
+        "card5 card6 card7 card8"
+        "misiones misiones misiones misiones"
+        "card9 card10 card11 card12";
+    
+        gap: 20px;
+
+
+    }
+}
+
+/*fin laptop landscape*/
+
+/* Cell landscape */
+
+@media screen and (max-width: 736px) {
+
+    .banner-titulo{
+        grid-area: banner-titulo;
+        min-height: 100vh;
+        width: 100%;
+        justify-content: space-between;
+        background-image: linear-gradient(rgba(4,9,30,0.555),rgba(4,9,30,0.555)),url(../img/world-big.jpg);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+
+}
+
+/* Fin cell landscape */
